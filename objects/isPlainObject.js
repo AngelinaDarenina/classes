@@ -8,8 +8,10 @@
  */
 
 export const isPlainObject = (element) => {
-    throw new Error(`Напишите здесь свое решение ${element}`);
+    return typeof element==="object"&&element!==null&&!Array.isArray(element);
 };
 
 const data = { a: 1 };
 console.log(isPlainObject(data)); // true
+console.log(isPlainObject([1, 2]));// false
+console.log(isPlainObject(null));// false

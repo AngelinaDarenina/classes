@@ -6,8 +6,43 @@
  * метод isDate для проверки даты и метод isPhone для проверки телефона:
  */
 class Validator {
-
+    isEmail(string){
+        if(typeof string==="string"){
+        return string.endsWith(`@mail.ru`)||string.endsWith(`@gmail.com`)?true:false;
+           }else{
+               return false
+           }
+           }
+    
+    isDomain(string){
+         if(typeof string==="string"){
+        return string.endsWith(`.net`)||string.endsWith(`.com`)||string.endsWith(`.ru`)?true:false;
+         }else{
+               return false
+           }
+    }
+    isDate(string){
+        //починить!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        /*if (typeof string==="string"&&string.length===10){
+        let dateString=string.split(".").reverse().join("-");
+        console.log(dateString)
+        let date=new Date(dateString);
+        console.log(date.getMonth())
+        return !isNaN(date.getTime());
+        /*if (typeof string==="string"&&string.length===10){
+        let dateArr=string.split(".");
+        console.log(dateArr)
+        if(dateArr[1]<=12&&dateArr[0]<=31){
+        return true;
+    }else{
+        return false
+    }*/
+    }
+    isPhone(){
+        
+    }
 }
+
 
 const validator = new Validator();
 

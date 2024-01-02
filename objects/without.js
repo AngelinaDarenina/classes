@@ -8,8 +8,12 @@
  */
 
 export const without = (object, ...args) => {
-    throw new Error(`Напишите здесь свое решение ${object} ${args}`);
+    for (let arg of args) {
+        delete object[arg];
+    }
+    return object;
 };
 
-const data = {a: 1, b: 2, c: 3};
-console.log(without(data, 'b', 'c')); // { a: 1 }
+const data = { a: 1, b: 2, c: 3 };
+console.log(without(data, "b", "c")); // { a: 1 }
+console.log(without({ a: 1, b: 2 }, "b", "a"));

@@ -14,7 +14,16 @@
  * @returns {string}
  */
 function vacation(date) {
-    return undefined;
-}
+    let begin=new Date(date.split(".").reverse().join("-"));
+    
+    begin.setDate(begin.getDate()+14);
+    
+    
+    let month=begin.getMonth()+1;
+    month=month<10?`0${month}`:month;
+   let day=begin.getDate();
+   day=day<10?`0${day}`:day;
+    return`${day}.${month}.${begin.getFullYear()}`;
+  }
 
 module.exports = vacation;

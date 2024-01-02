@@ -17,7 +17,9 @@
  * @returns {number}
  */
 function metro(x, y) {
-    return undefined;
-}
+    let firstWay=Math.abs(y-x);
+    let secondWay=13-firstWay;
+    return firstWay<secondWay?firstWay-1:secondWay-1;
+   }
 
 module.exports = metro;

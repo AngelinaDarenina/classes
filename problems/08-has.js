@@ -13,7 +13,19 @@
  * @returns {boolean}
  */
 function has(path, object) {
-    return undefined;
-}
+    if (object!==null&&typeof object==="object"){
+let currentObject=object;
+for(let item of path){
+  
+    if(Object.keys(currentObject).includes(item)){
+       currentObject=currentObject[item];
+    }else{
+        return false;
+    }
 
+}
+return true;
+}
+return false
+}
 module.exports = has;

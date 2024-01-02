@@ -10,10 +10,18 @@
  */
 
 const invoke = (object, path, func, args) => {
-    throw new Error(`Напишите здесь свое решение ${object} ${path} ${func} ${args}`);
+    let pathArr = path.split(".");
+    console.log(pathArr);
+    let resultArr = object;
+    for (let i of pathArr) {
+        resultArr = resultArr[i];
+        console.log(resultArr);
+    }
+
+    return resultArr[func](...args);
 };
 
-const data = {a: {b: [1, 2, 3]}}
-console.log(invoke(data, 'a.b', 'splice', [1, 2])); // [2, 3]
+const data = { a: { b: [1, 2, 3] } };
+console.log(invoke(data, "a.b", "splice", [1, 2])); // [2, 3]
 
 module.exports = invoke;

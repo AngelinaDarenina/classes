@@ -10,7 +10,15 @@
  * @returns {number[]}
  */
 function flatten(array) {
-    return undefined;
+    let str=String(array).split(",");
+      let result=[];
+    for(let item of str){
+            if (item!==""){
+           result.push(+item) ;
+        }
+       
+    }
+    return result;  
 }
 
 module.exports = flatten;

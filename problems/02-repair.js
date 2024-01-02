@@ -16,7 +16,9 @@
  * @returns {number}
  */
 function repair(width, length, height) {
-    return undefined;
-}
+    let SquareOfwalls=width*length*height;
+    
+    return Math.ceil(SquareOfwalls/16);
+};
 
 module.exports = repair;
